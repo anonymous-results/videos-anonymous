@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Anonymous Supplementary Video Results</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f3f5f7;
+      color: #202124;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(1500px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 48px 0 80px;
+    }
+
+    header {
+      max-width: 950px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 38px;
+      line-height: 1.25;
+    }
+
+    .introduction {
+      margin: 0;
+      color: #5f6368;
+      font-size: 17px;
+    }
+
+    section {
+      margin-bottom: 36px;
+      padding: 30px;
+      background: white;
+      border: 1px solid #e1e4e8;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .description {
+      margin: 0 0 24px;
+      color: #5f6368;
+    }
+
+    .video-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .two-columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .three-columns {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .four-columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .video-card {
+      min-width: 0;
+      padding: 16px;
+      background: #fafafa;
+      border: 1px solid #e8eaed;
+      border-radius: 10px;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      max-height: 75vh;
+      background: black;
+      border-radius: 7px;
+    }
+
+    .caption {
+      margin: 10px 0 0;
+      color: #666;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #777;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .three-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media screen and (max-width: 760px) {
+      .two-columns,
+      .four-columns {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        width: min(100% - 20px, 1500px);
+        padding-top: 28px;
+      }
+
+      section {
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Anonymous Supplementary Video Results</h1>
+
+      <p class="introduction">
+        This page presents additional qualitative results for the rebuttal,
+        including long-term generation, strict input ablations, controllable
+        trajectory generation, and comparisons of autoregressive inference modes.
+      </p>
+    </header>
+
+    <section>
+      <h2>1. Long-term Generation at 12 Hz</h2>
+
+      <p class="description">
+        These examples contain long-term rollouts generated at 12 Hz.
+        The model is directly evaluated at 12 Hz without additional fine-tuning.
+      </p>
+
+      <div class="video-grid three-columns">
+        <div class="video-card">
+          <h3>Long-term Result 1</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/long_12hz_01.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h3>Long-term Result 2</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/long_12hz_02.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h3>Long-term Result 3</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/long_12hz_03.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Generation without Colored Foreground Points</h2>
+
+      <p class="description">
+        These results are generated without colored foreground point assets.
+        The model only receives the remaining scene conditions and foreground
+        structural information.
+      </p>
+
+      <div class="video-grid two-columns">
+        <div class="video-card">
+          <h3>Result 1</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/no_foreground_color_01.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h3>Result 2</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/no_foreground_color_02.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Controllable Trajectory Generation</h2>
+
+      <p class="description">
+        These examples demonstrate generation under large trajectory deviations
+        and manually specified counterfactual ego trajectories.
+      </p>
+
+      <div class="video-grid two-columns">
+        <div class="video-card">
+          <h3>Large Trajectory Deviation</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/large_trajectory_deviation.mp4"
+              type="video/mp4"
+            >
+          </video>
+
+          <p class="caption">
+            The ego trajectory substantially deviates from the logged trajectory.
+          </p>
+        </div>
+
+        <div class="video-card">
+          <h3>Counterfactual Trajectory Control</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/counterfactual_control.mp4"
+              type="video/mp4"
+            >
+          </video>
+
+          <p class="caption">
+            The generated observations follow a manually controlled
+            counterfactual trajectory.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Comparison of AR Inference Modes</h2>
+
+      <p class="description">
+        All four inference modes use the same initial history and driving
+        conditions. The comparison evaluates temporal continuity and long-term
+        generation stability.
+      </p>
+
+      <div class="video-grid four-columns">
+        <div class="video-card">
+          <h3>Full-Causal</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/full_causal.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h3>Full-Noncausal</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/full_noncausal.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h3>Naive Rolling</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/naive_rolling.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+
+        <div class="video-card">
+          <h3>Reset-and-Roll</h3>
+
+          <video controls muted loop playsinline preload="metadata">
+            <source
+              src="videos/reset_and_roll.mp4"
+              type="video/mp4"
+            >
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Anonymous supplementary material for peer review.
+    </footer>
+  </main>
+</body>
+</html>

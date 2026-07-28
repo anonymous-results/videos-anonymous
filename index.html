@@ -167,8 +167,7 @@
       <h2>1. Long-term Generation at 12 Hz</h2>
 
       <p class="description">
-        These examples contain long-term rollouts generated at 12 Hz.
-        The model is directly evaluated at 12 Hz without additional fine-tuning.
+        These 12 Hz results show that our model can generate longer and higher-frame-rate videos while maintaining visual quality. The model is trained at 6 Hz and evaluated at 12 Hz without additional fine-tuning.
       </p>
 
       <div class="video-grid three-columns">
@@ -211,9 +210,9 @@
       <h2>2. Generation without Colored Foreground Points</h2>
 
       <p class="description">
-        These results are generated without colored foreground point assets.
-        The model only receives the remaining scene conditions and foreground
-        structural information.
+        These results remove all colored foreground point assets. 
+        The comparison shows that colored foreground points improve 
+        vehicle identity consistency, while template depth and 3D boxes still preserve correct geometry and object categories.
       </p>
 
       <div class="video-grid two-columns">
@@ -245,8 +244,9 @@
       <h2>3. Controllable Trajectory Generation</h2>
 
       <p class="description">
-        These examples demonstrate generation under large trajectory deviations
-        and manually specified counterfactual ego trajectories.
+         These examples vary the ego speed and heading within the scanned road area. 
+         The generated videos remain stable under large trajectory deviations, without sparsity-induced scene collapse.
+      </p>
       </p>
 
       <div class="video-grid two-columns">
